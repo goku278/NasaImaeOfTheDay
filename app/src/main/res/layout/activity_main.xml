@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:layout_height="match_parent"
+    tools:context=".ui.home.MainActivity">
+
+    <include
+        layout="@layout/toolbar_layout"
+        android:id="@+id/Toolbar" />
+
+    <include
+        android:id="@+id/videoLayout"
+        layout="@layout/video_layout"
+        android:visibility="gone" />
+
+    <include
+        layout="@layout/nasa_image_layout"
+        android:id="@+id/NasaImage"
+        android:visibility="gone"/>
+
+
+
+</LinearLayout>
