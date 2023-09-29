@@ -98,7 +98,7 @@ object AppUtils {
         videoLayout: RelativeLayout,
         mainActivity: MainActivity
     ) {
-        if (media_type!=null && media_type!!.contains("image")) {
+        if (!media_type.isNullOrEmpty() && media_type!!.contains("image")) {
             Glide.with(context!!).load(url).centerCrop().into(ivImage!!)
             tvTitle?.text = "Title :  $title"
             tvDate?.text = "Date : $date"
@@ -225,9 +225,8 @@ object AppUtils {
                         mainActivityViewModel.makeApiCall(progressDialog)
                     } else {
                         if (resp != null) {
-                            if (resp != null) {
+                            if (resp.title != null) {
                                 if (resp.hdurl != null &&
-                                    resp.copyright != null &&
                                     resp.date != null &&
                                     resp.explanation != null &&
                                     resp.media_type != null &&
@@ -256,7 +255,6 @@ object AppUtils {
                 } else {
                     if (resp != null) {
                         if (resp.hdurl != null &&
-                            resp.copyright != null &&
                             resp.date != null &&
                             resp.explanation != null &&
                             resp.media_type != null &&
